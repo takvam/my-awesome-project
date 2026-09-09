@@ -4,7 +4,7 @@ from langchain_openai import ChatOpenAI
 from langchain_anthropic import ChatAnthropic
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import PydanticOutputParser
-from langchain.agents import create_tool_calling_agent
+from langchain.agents import create_tool_calling_agent, AgentExecutor
 
 load_dotenv()
 
@@ -30,7 +30,7 @@ prompt = ChatPromptTemplate.from_message(
             """,
         ),
         ("placeholder", "{chat_history}"),
-        ("human", "{query}"),
+        ("human", "{query} {name}"),
         ("placeholder", "{agent_scratchpad}"),
     ]
 ).partial(format_instructions=parser.get_format_instructions())
@@ -41,3 +41,9 @@ prompt = ChatPromptTemplate.from_message(
 # response = llm.invoke("What is the meaning of life?")
 
 agent = create_tool_calling_agent(llm=llm, prompt=prompt, tools=[])
+
+agent_executor = AgentExecutor(agent=agent, tools=[], verbose=True)
+raw_response = agent_executor.invoke(
+    {"query": "What is the capital of France?", "name": "Alice"}
+)
+print(raw_response)
