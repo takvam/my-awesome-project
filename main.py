@@ -47,3 +47,8 @@ raw_response = agent_executor.invoke(
     {"query": "What is the capital of France?", "name": "Alice"}
 )
 print(raw_response)
+
+try:
+    structured_response = parser.parse(raw_response.get("output")[0]["text"])
+except Exception as e:
+    print("Error parsing response", e, "Raw response - ", structured_response)
