@@ -18,8 +18,16 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install dependencies
-        run: pip install openai python-dotenv langchain-openai langchain-anthropic langchain_classic langchain_community duckduckgo-search
+      - name: Sett opp uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: "latest"
+
+      - name: Installer avhengigheter
+        run: uv sync --frozen
+
+ #     - name: Install dependencies
+ #       run: pip install openai python-dotenv langchain-openai langchain-anthropic langchain_classic langchain_community duckduckgo-search
 
       - name: Run AI Agent
         env:
