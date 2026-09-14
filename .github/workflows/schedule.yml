@@ -19,7 +19,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install openai python-dotenv langchain-openai langchain-anthropic langchain_classic langchain_community
+        run: pip install openai python-dotenv langchain-openai langchain-anthropic langchain_classic langchain_community duckduckgo-search
 
       - name: Run AI Agent
         env:
