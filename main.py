@@ -6,6 +6,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain_classic.agents import create_tool_calling_agent, AgentExecutor
 from tools import search_tool, wiki_tool, save_tool
+import logging
 
 load_dotenv()
 
@@ -51,7 +52,7 @@ raw_response = agent_executor.invoke({"query": query})
 print(raw_response)
 
 try:
-    structured_response = parser.parse(raw_response.get("output")[0]["text"])
+    structured_response = parser.parse(raw_response.get("output")[2]["text"])
     print(structured_response)
 except Exception as e:
     print("Error parsing response", e, "Raw response - ", structured_response)
