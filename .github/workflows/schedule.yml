@@ -19,7 +19,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install dependencies
-        run: pip install openai python-dotenv
+        run: pip install openai python-dotenv langchain-openai
 
       - name: Run AI Agent
         env:
