@@ -32,4 +32,4 @@ jobs:
       - name: Run AI Agent
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} # Stored in GitHub Secrets
-        run: python main.py
+        run: uv run python main.py
