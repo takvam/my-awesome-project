@@ -32,4 +32,6 @@ jobs:
       - name: Run AI Agent
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} # Stored in GitHub Secrets
+          AVSENDER_EPOST: ${{ secrets.AVSENDER_EPOST }}
+          AVSENDER_PASSORD: ${{ secrets.AVSENDER_PASSORD }}
         run: echo "Finn de beste salgene på designerjakker eller herresko hos Ferner Jacobsen og lignende butikker akkurat nå" | uv run python main.py
