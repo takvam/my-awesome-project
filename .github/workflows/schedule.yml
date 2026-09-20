@@ -32,4 +32,4 @@ jobs:
       - name: Run AI Agent
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} # Stored in GitHub Secrets
-        run: echo "What can i help you find in regards to fashion " | uv run python main.py
+        run: echo "Finn de beste salgene på designerjakker eller herresko hos Ferner Jacobsen og lignende butikker akkurat nå" | uv run python main.py
