@@ -7,6 +7,7 @@ from email.mime.text import MIMEText
 from dotenv import load_dotenv
 from pydantic import BaseModel
 from langchain_openai import ChatOpenAI
+from langchain_core.tools import StructuredTool
 from langchain_anthropic import ChatAnthropic
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import PydanticOutputParser
@@ -84,6 +85,13 @@ prompt = ChatPromptTemplate.from_messages(
 # llm2 = ChatAnthropic(model="claude-3-5-sonnet-20241022")
 
 # response = llm.invoke("What is the meaning of life?")
+
+# Pakk funksjonen inn i et StructuredTool-objekt som Pydantic v2 godtar
+send_email_tool = StructuredTool.from_function(
+    func=send_email_tool,
+    name="send_email_tool",
+    description="Useful for sending an email to a specific address with a subject and body content.",
+)
 
 tools = [search_tool, wiki_tool, save_tool, send_email_tool]
 agent = create_tool_calling_agent(llm=llm, prompt=prompt, tools=[])
