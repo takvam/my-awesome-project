@@ -103,7 +103,7 @@ raw_response = agent_executor.invoke({"query": query})
 print(raw_response)
 
 try:
-    structured_response = parser.parse(raw_response.get("output")["text"])
+    structured_response = parser.parse(raw_response.get("output"))
     print(structured_response)
 except Exception as e:
     print("Error parsing response", e, "Raw response - ", structured_response)
