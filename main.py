@@ -1,7 +1,6 @@
 import logging
 import os
 import smtplib
-import uuid
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
@@ -94,26 +93,8 @@ send_email_tool = StructuredTool.from_function(
     description="Useful for sending an email to a specific address with a subject and body content.",
 )
 
-# tools = [search_tool, wiki_tool, save_tool, send_email_tool]
-# agent = create_tool_calling_agent(llm, tools, prompt)
-raw_tools = [search_tool, wiki_tool, save_tool, send_email_tool]
-tools = []
-
-# 2. Tving frem gyldige OpenAI-navn ved å overskrive dem i et nytt StructuredTool-objekt
-for i, t in enumerate(raw_tools):
-    # Generer et trygt navn: kun bokstaver, tall, understrek og bindestrek
-    # Vi kan bruke standardiserte navn for å være 100% sikre
-    safe_names = ["search_tool", "wiki_tool", "save_tool", "send_email_tool"]
-
-    clean_tool = StructuredTool.from_function(
-        func=t.func,
-        name=safe_names[i],  # Tvinger navnet til å være fullstendig gyldig
-        description=t.description,
-    )
-    tools.append(clean_tool)
-
-# 3. Nå kan du trygt opprette agenten med den rensede listen
-agent = create_tool_calling_agent(llm, tools, prompt)
+tools = [search_tool, wiki_tool, save_tool]
+agent = create_tool_calling_agent(llm=llm, prompt=prompt, tools=[])
 
 agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 
