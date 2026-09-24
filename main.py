@@ -33,7 +33,7 @@ def send_email_tool(to_email: str, subject: str, body: str) -> str:
     msg.attach(MIMEText(body, "plain"))
 
     try:
-        server = smtplib.SMTP("://gmail.com", 587)
+        server = smtplib.SMTP("smtp.gmail.com", 587)
         server.starttls()
         server.login(sender_email, sender_password)
         server.sendmail(sender_email, to_email, msg.as_string())
@@ -94,7 +94,7 @@ send_email_tool = StructuredTool.from_function(
 )
 
 tools = [search_tool, wiki_tool, save_tool, send_email_tool]
-agent = create_tool_calling_agent(llm=llm, prompt=prompt, tools=[])
+agent = create_tool_calling_agent(llm=llm, prompt=prompt, tools=tools)
 
 agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 
