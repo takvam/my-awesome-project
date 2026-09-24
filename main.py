@@ -94,7 +94,7 @@ send_email_tool = StructuredTool.from_function(
 )
 
 tools = [search_tool, wiki_tool, save_tool, send_email_tool]
-agent = create_tool_calling_agent(llm=llm, prompt=prompt, tools=[])
+agent = create_tool_calling_agent(llm, tools, prompt)
 
 agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 
