@@ -6,6 +6,7 @@ from email.mime.text import MIMEText
 
 from dotenv import load_dotenv
 from pydantic import BaseModel
+
 from langchain_openai import ChatOpenAI
 from langchain_core.tools import StructuredTool
 from langchain_anthropic import ChatAnthropic
@@ -13,32 +14,40 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain_classic.agents import AgentExecutor, create_tool_calling_agent
 from tools import search_tool, wiki_tool, save_tool
-import logging
 
 load_dotenv()
 
 
-def send_email_tool(to_email: str, subject: str, body: str) -> str:
-    """Useful for sending an email to a specific address with a subject and body"""
+def send_email_tool(subject: str, body: str) -> str:
+    """Useful for sending an email with a subject and body"""
+
     sender_email = os.getenv("AVSENDER_EPOST")
     sender_password = os.getenv("AVSENDER_PASSORD")
+    receiver_email = os.getenv("MOTTAKER_EPOST")
 
-    if not sender_email or not sender_password:
-        return "Kunne ikke sende e-post: Mangler AVSENDER_passord eller AVSENDER_epost"
+    if not sender_email or not sender_password or not receiver_email:
+        return "Kunne ikke sende e-post: Mangler e-postinnstillinger"
 
     msg = MIMEMultipart()
+
     msg["From"] = sender_email
-    msg["To"] = to_email
+    msg["To"] = receiver_email
     msg["Subject"] = subject
+
     msg.attach(MIMEText(body, "plain"))
 
     try:
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.starttls()
+
         server.login(sender_email, sender_password)
-        server.sendmail(sender_email, to_email, msg.as_string())
+
+        server.sendmail(sender_email, receiver_email, msg.as_string())
+
         server.quit()
-        return f"E-post ble sendt suksessfullt til {to_email}!"
+
+        return f"E-post ble sendt suksessfullt til {receiver_email}!"
+
     except Exception as e:
         return f"Feil under sending av e-post: {str(e)}"
 
@@ -75,7 +84,6 @@ prompt = ChatPromptTemplate.from_messages(
             5. Wrap the final output in this format and provide no other text\n{format_instructions}
             """,
         ),
-        ("placeholder", "{chat_history}"),
         ("human", "{query}"),
         ("placeholder", "{agent_scratchpad}"),
     ]
@@ -93,8 +101,8 @@ send_email_tool = StructuredTool.from_function(
     description="Useful for sending an email to a specific address with a subject and body content.",
 )
 
-tools = [search_tool, wiki_tool, save_tool]
-agent = create_tool_calling_agent(llm=llm, prompt=prompt, tools=[])
+tools = [search_tool, wiki_tool, save_tool, send_email_tool]
+agent = create_tool_calling_agent(llm=llm, prompt=prompt, tools=tools)
 
 agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 
@@ -106,4 +114,4 @@ try:
     structured_response = parser.parse(raw_response.get("output"))
     print(structured_response)
 except Exception as e:
-    print("Error parsing response", e, "Raw response - ", structured_response)
+    print("Error parsing response", e, "Raw response - ", raw_response)

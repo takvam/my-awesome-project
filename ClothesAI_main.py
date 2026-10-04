@@ -26,8 +26,9 @@ prompt = ChatPromptTemplate.from_messages(
         (
             "system",
             """
-            You are a fashionasta that will help generate a fashion paper.
-            Answer the user query and use neccessary tools.
+            You are a luxury fashion expert and personal shopper. 
+            Your job is to help the user find sales, discounts, and deals on luxury fashion websites.
+            Use the search_tool to look up current prices, active sales, and promo codes on high-end sites (like Farfetch, Net-a-Porter, SSENSE, Mytheresa, etc.).
             Wrap the output in this format and provide no other text\n{format_instructions}
             """,
         ),

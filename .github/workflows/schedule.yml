@@ -34,4 +34,5 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} # Stored in GitHub Secrets
           AVSENDER_EPOST: ${{ secrets.AVSENDER_EPOST }}
           AVSENDER_PASSORD: ${{ secrets.AVSENDER_PASSORD }}
+          MOTTAKER_EPOST: ${{ secrets.MOTTAKER_EPOST }}
         run: echo "Finn spesifikke designerjakker på salg hos Ferner Jacobsen og Follestad akkurat nå. Gi meg navnet på produktet, førpris og salgspris i en ren tekst-liste." | uv run python main.py
