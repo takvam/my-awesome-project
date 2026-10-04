@@ -13,7 +13,7 @@ from langchain_anthropic import ChatAnthropic
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain_classic.agents import AgentExecutor, create_tool_calling_agent
-from tools import search_tool, wiki_tool, save_tool
+from tools import search_tool, save_tool
 
 load_dotenv()
 
