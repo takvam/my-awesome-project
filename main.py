@@ -101,7 +101,7 @@ send_email_tool = StructuredTool.from_function(
     description="Useful for sending an email to a specific address with a subject and body content.",
 )
 
-tools = [search_tool, wiki_tool, save_tool, send_email_tool]
+tools = [search_tool, save_tool, send_email_tool]
 agent = create_tool_calling_agent(llm=llm, prompt=prompt, tools=tools)
 
 agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
