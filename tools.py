@@ -1,5 +1,4 @@
-import requests
-from bs4 import BeautifulSoup
+from langchain_community.tools import DuckDuckGoSearchRun
 from langchain_core.tools import Tool
 from datetime import datetime
 
@@ -21,41 +20,9 @@ save_tool = Tool(
 )
 
 
-def search_web(query: str) -> str:
-    """Search the web using Bing."""
-
-    url = "https://www.bing.com/search"
-    params = {"q": query}
-    headers = {"User-Agent": "Mozilla/5.0"}
-
-    response = requests.get(url, params=params, headers=headers, timeout=30)
-
-    response.raise_for_status()
-
-    soup = BeautifulSoup(response.text, "html.parser")
-
-    results = []
-
-    for result in soup.select("li.b_algo")[:8]:
-        title = result.select_one("h2")
-        link = result.select_one("h2 a")
-        description = result.select_one(".b_caption p")
-
-        if title and link:
-            results.append(
-                f"{title.get_text(strip=True)}\n"
-                f"{link.get('href')}\n"
-                f"{description.get_text(strip=True) if description else ''}"
-            )
-
-    if not results:
-        return "No search results found."
-
-    return "\n\n".join(results)
-
-
+search = DuckDuckGoSearchRun(backend="bing")
 search_tool = Tool(
     name="search_web",
-    func=search_web,
-    description="Search the web using Bing and return relevant web results.",
+    func=search.run,
+    description="Search the web for information",
 )
