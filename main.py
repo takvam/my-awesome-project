@@ -37,7 +37,7 @@ def send_email_tool(subject: str, body: str) -> str:
     msg.attach(MIMEText(body, "plain"))
 
     try:
-        server = smtplib.SMTP("smtp.gmail.com", 587)
+        server = smtplib.SMTP("smtp.outlook.com", 587)
         server.starttls()
 
         server.login(sender_email, sender_password)
