@@ -20,7 +20,7 @@ save_tool = Tool(
 )
 
 
-search = DuckDuckGoSearchRun()
+search = DuckDuckGoSearchRun(backend="bing")
 search_tool = Tool(
     name="search_web",
     func=search.run,
