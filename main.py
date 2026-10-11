@@ -144,18 +144,27 @@ send_email_tool = StructuredTool.from_function(
 tools = [search_tool, save_tool, send_email_tool]
 agent = create_tool_calling_agent(llm=llm, prompt=prompt, tools=tools)
 
-agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=False)
+# Kaller på agenten, bruker verktøyene vi har laget, max iterasjoner på 8 så den ikke bruker opp alle søkene og forcer stopp.
+agent_executor = AgentExecutor(
+    agent=agent,
+    tools=tools,
+    verbose=False,
+    max_iterations=8,
+    early_stopping_method="force",
+    handle_parsing_errors=True,
+)
 
 query = input("What can i help you find in regards to fashion? ")
 raw_response = agent_executor.invoke({"query": query})
+output = raw_response.get("output", "")
 
-
-try:
-    structured_response = parser.parse(raw_response.get("output"))
-
-    print("\n" + "=" * 70)
-    print(structured_response.summary)
-    print("=" * 70)
-
-except Exception as e:
-    print("Error parsing response", e, "Raw response - ", raw_response)
+if output == "Agent stopped due to max iterations.":
+    print(
+        "Agenten klarte ikke å fullføre søket. Kontroller søkeverktøyet og prøv igjen."
+    )
+else:
+    try:
+        structured_response = parser.parse(output)
+        print("\n" + structured_response.summary)
+    except Exception:
+        print(output)
