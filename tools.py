@@ -20,9 +20,31 @@ save_tool = Tool(
 )
 
 
-search = DuckDuckGoSearchRun(backend="bing")
+def search_web(query: str) -> str:
+    """Search the web and return results or a readable error."""
+    try:
+        search = DuckDuckGoSearchRun(backend="bing")
+        result = search.run(query)
+
+        if not result or not result.strip():
+            return "Search returned no results. Try a different query."
+
+        return result
+
+    except Exception as e:
+        return (
+            "Web search failed. "
+            f"Error type: {type(e).__name__}. "
+            f"Details: {str(e)[:500]}"
+        )
+
+
 search_tool = Tool(
     name="search_web",
-    func=search.run,
-    description="Search the web for information",
+    func=search_web,
+    description=(
+        "Search the web for current products, prices, sales and discounts. "
+        "Use targeted queries for Norwegian fashion retailers, including "
+        "Ferner Jacobsen and Follestad. Return product names, prices and URLs."
+    ),
 )
