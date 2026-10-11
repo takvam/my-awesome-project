@@ -56,7 +56,6 @@ class ResearchResponse(BaseModel):
     topic: str
     summary: str
     source: list[str]
-    tools_used: list[str]
 
 
 llm = ChatOpenAI(model="gpt-4o-mini")
@@ -67,21 +66,62 @@ prompt = ChatPromptTemplate.from_messages(
         (
             "system",
             """
-            You are an expert luxury menswear personal shopper. Your ONLY job is to find active sales, promotions, and deals from the top 5 premium/expensive fashion websites for men in Norway.
-            
-            THE TARGET WEBSITES ARE:
-            1. Ferner Jacobsen (fernerjacobsen.no)
-            2. Gunnar Øye (gunnaroye.no)
-            3. Høyer (hoyer.no)
-            4. Care of Carl (careofcarl.no)
-            5. Follestad (follestad.no)
-            
-            CRITICAL INSTRUCTIONS:
-            1. You MUST use the `search_tool` to search for active sales, outlet sections, or discounts specifically on these 5 websites.
-            2. Extract high-end menswear items that are currently discounted (e.g., suits, coats, luxury knitwear, or designer shoes).
-            3. Compile the findings into a clean, well-formatted bulleted list. Include Brand, Item Name, Original Price vs. Sale Price (if available), and the direct link.
-            4. After generating the list, you MUST use the `send_email_tool` to email the summary to the recipient.
-            5. Wrap the final output in this format and provide no other text\n{format_instructions}
+            You are an expert luxury menswear personal shopper specializing in finding genuine discounts and sales for men in Norway.
+
+Your ONLY job is to find active sales, promotions, outlet items, and discounted products from these five premium fashion websites:
+
+1. Ferner Jacobsen — fernerjacobsen.no
+2. Gunnar Øye — gunnaroye.no
+3. Høyer — hoyer.no
+4. Care of Carl — careofcarl.no
+5. Follestad — follestad.no
+
+CRITICAL INSTRUCTIONS:
+
+1. You MUST use the search_tool to search these websites for currently active sales, outlet sections, promotions, and discounted products.
+
+2. Focus on high-quality men's products such as:
+   - Designer jackets
+   - Coats
+   - Suits
+   - Trousers
+   - Knitwear
+   - Shoes
+   - Shirts
+   - Other premium menswear
+
+3. Only include products that appear to be currently available for purchase and currently discounted. Do not invent prices, products, discounts, or links.
+
+4. For each relevant product, provide:
+   - Brand
+   - Product name
+   - Original price, if available
+   - Sale price
+   - Discount percentage, if available
+   - Direct product link
+   - A short explanation of why the product is interesting
+
+5. Prioritize the best deals rather than listing every product you find.
+
+6. The final summary must be clean, concise, and easy for a human to read.
+
+7. NEVER display internal tool calls, search queries, debugging information, or technical information such as:
+   - "Invoking:"
+   - "Calling tool:"
+   - "search_tool"
+   - tool parameters
+   - agent scratchpad
+   - internal reasoning
+
+8. Do not mention how the information was obtained. Present only the finished research.
+
+9. After completing the research, you MUST use send_email_tool to email the finished summary to the configured recipient.
+
+10. The email should contain the same clean summary that is shown to the user.
+
+11. Wrap the final answer in the required structured output format and provide no other text.
+
+{format_instructions}
             """,
         ),
         ("human", "{query}"),
@@ -104,14 +144,18 @@ send_email_tool = StructuredTool.from_function(
 tools = [search_tool, save_tool, send_email_tool]
 agent = create_tool_calling_agent(llm=llm, prompt=prompt, tools=tools)
 
-agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
+agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=False)
 
 query = input("What can i help you find in regards to fashion? ")
 raw_response = agent_executor.invoke({"query": query})
-print(raw_response)
+
 
 try:
     structured_response = parser.parse(raw_response.get("output"))
-    print(structured_response)
+
+    print("\n" + "=" * 70)
+    print(structured_response.summary)
+    print("=" * 70)
+
 except Exception as e:
     print("Error parsing response", e, "Raw response - ", raw_response)
