@@ -1,0 +1,412 @@
+[
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "PT",
+    "name": "The Rebel Seersucker Pant - Corda Stripes",
+    "sale_price": 1140,
+    "original_price": 3799,
+    "discount_kr": 2659,
+    "discount_percent": 70,
+    "url": "https://www.fernerjacobsen.no/merker/pt/the-rebel-seersucker-pant-corda-stripes"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Ferner Jacobsen",
+    "name": "Slim Linen Shirt - Raspberry",
+    "sale_price": 510,
+    "original_price": 1699,
+    "discount_kr": 1189,
+    "discount_percent": 70,
+    "url": "https://www.fernerjacobsen.no/merker/ferner-jacobsen/slim-linen-shirt-raspberry"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "RL Purple Label",
+    "name": "Cotton-cashmere Herringbone Shirt - Champagne",
+    "sale_price": 8748,
+    "original_price": 17495,
+    "discount_kr": 8747,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/rl-purple-label/cotton-cashmere-herringbone-shirt-champagne"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Herno",
+    "name": "Overshirt Down Jacket - Blu Balena Chiaro",
+    "sale_price": 3800,
+    "original_price": 7599,
+    "discount_kr": 3799,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/herno/overshirt-down-jacket-blu-balena-chiaro"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Polo Ralph Lauren",
+    "name": "Suede-trim Toquilla Straw Fedora - Natural",
+    "sale_price": 2298,
+    "original_price": 4595,
+    "discount_kr": 2297,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/polo-ralph-lauren/herre/tilbehor/caps-og-hatt/suede-trim-toquilla-straw-fedora-natural"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Cesar Equipment",
+    "name": "Bandol Ripstop Shirt Jacket - Khaki Green",
+    "sale_price": 2000,
+    "original_price": 3999,
+    "discount_kr": 1999,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/cesar-equipment/bandol-ripstop-shirt-jacket-khaki-green"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "BOSS",
+    "name": "Relaxed-fit Overshirt - Open Beige",
+    "sale_price": 1950,
+    "original_price": 3899,
+    "discount_kr": 1949,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/boss/jakke/relaxed-fit-overshirt-open-beige"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Swims",
+    "name": "Fjell Boot - Navy",
+    "sale_price": 1800,
+    "original_price": 3599,
+    "discount_kr": 1799,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/swims/sko/fjell-boot-navy"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Polo Ralph Lauren",
+    "name": "Lateef Slim Tapered Fit Linen Pant - Navy Micro Stripe",
+    "sale_price": 1698,
+    "original_price": 3395,
+    "discount_kr": 1697,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/polo-ralph-lauren/herre/bukse/lateef-slim-tapered-fit-linen-pant-navy-micro-stripe"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "UGG",
+    "name": "M Neumel Weather Hybrid - Chestnut / Whitecap",
+    "sale_price": 1500,
+    "original_price": 2999,
+    "discount_kr": 1499,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/ugg/herre/vintersko/m-neumel-weather-hybrid-chestnut-whitecap"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Polo Ralph Lauren",
+    "name": "Vintage Fit Fleece Graphic Sweatshirt - Nevis",
+    "sale_price": 1398,
+    "original_price": 2795,
+    "discount_kr": 1397,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/polo-ralph-lauren/herre/genser/hettegenser-og-college/vintage-fit-fleece-graphic-sweatshirt-nevis"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Stenströms",
+    "name": "Regular Linen Shirt - Light Blue Stripes Seashell",
+    "sale_price": 1300,
+    "original_price": 2599,
+    "discount_kr": 1299,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/stenstroms/herre/skjorte/regular/regular-linen-shirt-light-blue-stripes-seashell"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Holzweiler",
+    "name": "Summer Zip-up Polo Knit - Navy",
+    "sale_price": 1250,
+    "original_price": 2499,
+    "discount_kr": 1249,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/holzweiler/herre/cardigan/summer-zip-up-polo-knit-navy"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Polo Ralph Lauren",
+    "name": "Cable-knit Cotton Ball Cap - Newport Navy",
+    "sale_price": 1198,
+    "original_price": 2395,
+    "discount_kr": 1197,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/polo-ralph-lauren/herre/tilbehor/caps-og-hatt/cable-knit-cotton-ball-cap-newport-navy"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Holzweiler",
+    "name": "Regular-fit Linen Shirt - Ecru",
+    "sale_price": 1100,
+    "original_price": 2199,
+    "discount_kr": 1099,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/holzweiler/herre/regular-fit-linen-shirt-ecru"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Polo Ralph Lauren",
+    "name": "Classic Fit Embroidered Jersey T-shirt - Dark Cobalt",
+    "sale_price": 1098,
+    "original_price": 2195,
+    "discount_kr": 1097,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/polo-ralph-lauren/herre/t-skjorte/kortermet-t-skjorte/classic-fit-embroidered-jersey-t-shirt-dark-cobalt"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Polo Ralph Lauren",
+    "name": "Custom Fit Featherweight Twill Shirt - Celadon",
+    "sale_price": 1023,
+    "original_price": 2045,
+    "discount_kr": 1022,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/polo-ralph-lauren/herre/skjorte/custom-fit/custom-fit-featherweight-twill-shirt-celadon"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Polo Ralph Lauren",
+    "name": "Gellar Relaxed Twill Cargo Short - Classic Stone",
+    "sale_price": 1023,
+    "original_price": 2045,
+    "discount_kr": 1022,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/polo-ralph-lauren/herre/shorts/gellar-relaxed-twill-cargo-short-classic-stone"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Holzweiler",
+    "name": "Lio Knitted Polo Shirt - Ecru",
+    "sale_price": 950,
+    "original_price": 1899,
+    "discount_kr": 949,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/holzweiler/herre/t-skjorte/lio-knitted-polo-shirt-ecru"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Swims",
+    "name": "Braided Lace Loafer - Basalt Grey",
+    "sale_price": 950,
+    "original_price": 1899,
+    "discount_kr": 949,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/swims/sko/braided-lace-loafer-basalt-grey"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Polo Ralph Lauren",
+    "name": "Custom Fit Striped Broadcloth Shirt - White Kona Orange",
+    "sale_price": 948,
+    "original_price": 1895,
+    "discount_kr": 947,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/polo-ralph-lauren/herre/skjorte/custom-fit/custom-fit-striped-broadcloth-shirt-white-kona-orange"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Swims",
+    "name": "Breeze Tennis Knit - Navy-white",
+    "sale_price": 900,
+    "original_price": 1799,
+    "discount_kr": 899,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/swims/sko/breeze-tennis-knit-navy-white"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "O.A.D.",
+    "name": "O.a.d. Ribbed Beanie - Off White",
+    "sale_price": 800,
+    "original_price": 1599,
+    "discount_kr": 799,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/oad/oad-ribbed-beanie-off-white"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Gran Sasso",
+    "name": "Crew Neck Merino - Ligth Grey",
+    "sale_price": 800,
+    "original_price": 1599,
+    "discount_kr": 799,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/gran-sasso/genser/rund-hals-og-v-hals/crew-neck-merino-ligth-grey"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Holzweiler",
+    "name": "Slim-fit Pique Polo Shirt - Teal",
+    "sale_price": 750,
+    "original_price": 1499,
+    "discount_kr": 749,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/holzweiler/herre/t-skjorte/slim-fit-pique-polo-shirt-teal"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Holzweiler",
+    "name": "Slim-fit Pique Polo Shirt - Light Blue",
+    "sale_price": 750,
+    "original_price": 1499,
+    "discount_kr": 749,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/holzweiler/herre/t-skjorte/slim-fit-pique-polo-shirt-light-blue"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Polo Ralph Lauren",
+    "name": "Cevio Washed Canvas Espadrille - Orange",
+    "sale_price": 748,
+    "original_price": 1495,
+    "discount_kr": 747,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/polo-ralph-lauren/herre/sko/cevio-washed-canvas-espadrille-orange"
+  },
+  {
+    "store": "Follestad",
+    "brand": "SANTONI",
+    "name": "Double Monk Suede - Brun",
+    "sale_price": 5399,
+    "original_price": 8999,
+    "discount_kr": 3600,
+    "discount_percent": 40,
+    "url": "https://www.follestad.no/produkt/santoni-double-monk-suede-brun/"
+  },
+  {
+    "store": "Follestad",
+    "brand": "HERNO",
+    "name": "Il Giacco - Blå",
+    "sale_price": 4799,
+    "original_price": 7999,
+    "discount_kr": 3200,
+    "discount_percent": 40,
+    "url": "https://www.follestad.no/produkt/herno-il-giacco-bla/"
+  },
+  {
+    "store": "Follestad",
+    "brand": "SANTONI",
+    "name": "Double Buckle Sneaker - Beige",
+    "sale_price": 4019,
+    "original_price": 6699,
+    "discount_kr": 2680,
+    "discount_percent": 40,
+    "url": "https://www.follestad.no/produkt/santoni-double-buckle-sneaker-beige/"
+  },
+  {
+    "store": "Follestad",
+    "brand": "POLO RALPH LAUREN",
+    "name": "The Iconic Field Jacket - Oliven",
+    "sale_price": 3599,
+    "original_price": 5999,
+    "discount_kr": 2400,
+    "discount_percent": 40,
+    "url": "https://www.follestad.no/produkt/polo-ralph-lauren-the-iconic-field-jacket-oliven/"
+  },
+  {
+    "store": "Follestad",
+    "brand": "JACOB COHËN",
+    "name": "Edo Woven Cotton Trousers - Aviation",
+    "sale_price": 3179,
+    "original_price": 5299,
+    "discount_kr": 2120,
+    "discount_percent": 40,
+    "url": "https://www.follestad.no/produkt/jacob-cohen-edo-woven-cotton-trousers-aviation/"
+  },
+  {
+    "store": "Follestad",
+    "brand": "OSCAR JACOBSON",
+    "name": "Dandy Cotton Linen Trousers - Hvit",
+    "sale_price": 1499,
+    "original_price": 2499,
+    "discount_kr": 1000,
+    "discount_percent": 40,
+    "url": "https://www.follestad.no/produkt/oscar-jacobson-dandy-cotton-linen-trousers-hvit/"
+  },
+  {
+    "store": "Follestad",
+    "brand": "MORGANO",
+    "name": "Linen Short Sleeve Shirt - Rød",
+    "sale_price": 1439,
+    "original_price": 2399,
+    "discount_kr": 960,
+    "discount_percent": 40,
+    "url": "https://www.follestad.no/produkt/morgano-linen-short-sleeve-shirt-rod/"
+  },
+  {
+    "store": "Follestad",
+    "brand": "XACUS",
+    "name": "Linen & Cotton Tailor Fit Shirt - Blå",
+    "sale_price": 1199,
+    "original_price": 1999,
+    "discount_kr": 800,
+    "discount_percent": 40,
+    "url": "https://www.follestad.no/produkt/xacus-linen-cotton-tailor-fit-shirt-bla/"
+  },
+  {
+    "store": "Follestad",
+    "brand": "POLO RALPH LAUREN",
+    "name": "Striped Pointelle-Ribbed Polo Shirt - Marine",
+    "sale_price": 1199,
+    "original_price": 1999,
+    "discount_kr": 800,
+    "discount_percent": 40,
+    "url": "https://www.follestad.no/produkt/polo-ralph-lauren-striped-pointelle-ribbed-polo-shirt-marine/"
+  },
+  {
+    "store": "Follestad",
+    "brand": "XACUS",
+    "name": "Knitted Shirt Tailor Fit - Grønn",
+    "sale_price": 1199,
+    "original_price": 1999,
+    "discount_kr": 800,
+    "discount_percent": 40,
+    "url": "https://www.follestad.no/produkt/xacus-knitted-shirt-tailor-fit-gronn/"
+  },
+  {
+    "store": "Follestad",
+    "brand": "POLO RALPH LAUREN",
+    "name": "Ralph’s Beach Club Twill Ball Cap - Marine",
+    "sale_price": 899,
+    "original_price": 1499,
+    "discount_kr": 600,
+    "discount_percent": 40,
+    "url": "https://www.follestad.no/produkt/polo-ralph-lauren-ralphs-beach-club-twill-ball-cap-marine/"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Blæst",
+    "name": "Aalesund Poncho - Beige",
+    "sale_price": 1883,
+    "original_price": 2690,
+    "discount_kr": 807,
+    "discount_percent": 30,
+    "url": "https://www.fernerjacobsen.no/merker/blaest/herre/poncho/aalesund-poncho-beige"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Swims",
+    "name": "48 Hour Holdall - Navy",
+    "sale_price": 1819,
+    "original_price": 2599,
+    "discount_kr": 780,
+    "discount_percent": 30,
+    "url": "https://www.fernerjacobsen.no/merker/swims/bag/48-hour-holdall-navy"
+  },
+  {
+    "store": "Ferner Jacobsen",
+    "brand": "Gran Sasso",
+    "name": "Long Sleeve Pop-over Shirt - White",
+    "sale_price": 1259,
+    "original_price": 1799,
+    "discount_kr": 540,
+    "discount_percent": 30,
+    "url": "https://www.fernerjacobsen.no/merker/gran-sasso/skjorte/long-sleeve-pop-over-shirt-white"
+  }
+]

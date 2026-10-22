@@ -1,14 +1,18 @@
-name: Scheduled AI Agent
+
+name: Daily Fashion Deals
 
 on:
   schedule:
-    # Runs at 12:00 UTC every day
     - cron: '0 12 * * *'
-  workflow_dispatch: # Allows you to also trigger it manually
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
-  run-agent:
+  scrape-and-report:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -18,21 +22,29 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Sett opp uv
+      - name: Set up uv
         uses: astral-sh/setup-uv@v5
         with:
           version: "latest"
 
-      - name: Installer avhengigheter
+      - name: Install dependencies
         run: uv sync --frozen
 
- #     - name: Install dependencies
- #       run: pip install openai python-dotenv langchain-openai langchain-anthropic langchain_classic langchain_community duckduckgo-search
+      - name: Install Playwright Chromium
+        run: uv run playwright install --with-deps chromium
 
-      - name: Run AI Agent
+      - name: Scrape sale products
+        run: uv run python store_scraper.py
+
+      - name: Generate HTML report
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }} # Stored in GitHub Secrets
-          AVSENDER_EPOST: ${{ secrets.AVSENDER_EPOST }}
-          AVSENDER_PASSORD: ${{ secrets.AVSENDER_PASSORD }}
-          MOTTAKER_EPOST: ${{ secrets.MOTTAKER_EPOST }}
-        run: echo "Finn spesifikke designerjakker på salg hos Ferner Jacobsen og Follestad akkurat nå. Gi meg navnet på produktet, førpris og salgspris i en ren tekst-liste." | uv run python main.py
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: uv run python daily_deals.py
+
+      - name: Save report as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-designer-deals
+          path: daily_deals.html
+          if-no-files-found: error
+          retention-days: 14

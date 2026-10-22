@@ -46,7 +46,8 @@ def parse_price(value: str) -> Optional[int]:
 
 
 async def load_all_products(page, selector):
-    """Skroller siden for å utløse eventuell lasting av flere produkter."""
+    """Henter produktkort og bruker riktige felter for hver butikk."""
+
     previous_count = -1
     stable_rounds = 0
 
@@ -72,8 +73,15 @@ async def load_all_products(page, selector):
                 card.querySelector(selector)?.innerText?.trim() || "";
 
             const link = card.querySelector(
-                "a[href*='/produkt/'], a[data-product-id], a[href]"
+                "a.title-price-wrapper"
+            ) || card.querySelector(
+                "a[data-product-id]"
+            ) || card.querySelector(
+                "a[href*='/merker/']"
             );
+
+            const sale = text(".price-sale");
+            const regular = text(".price-regular");
 
             return {
                 url: link?.href || "",
@@ -81,9 +89,10 @@ async def load_all_products(page, selector):
                        text('[class*="text-primary-headings"]'),
                 name: text(".product-card-title") ||
                       text('[class*="font-serif"][class*="text-light"]'),
-                regular: text(".price-regular"),
-                sale: text(".price-sale"),
-                struck: card.querySelector("s")?.innerText?.trim() || "",
+                regular: regular,
+                sale: sale,
+                struck: card.querySelector("s")?.innerText?.trim() ||
+                        card.querySelector("del")?.innerText?.trim() || "",
                 current: text('[class*="text-accent-bronze"][class*="font-serif"]'),
                 full_text: card.innerText || ""
             };
@@ -96,42 +105,41 @@ def make_product(store, item):
         return None
 
     if store == "Ferner Jacobsen":
-        # Ferner viser førprisen i et <s>-element.
         original = parse_price(item["struck"])
         sale = parse_price(item["current"])
-
-        # Fallback hvis klassene på prisfeltet endres.
-        if original is None or sale is None:
-            return None
-
-        brand = item["brand"]
-        name = item["name"]
-
     else:
-        # Follestad: prisene er markert med egne CSS-klasser.
         original = parse_price(item["regular"])
         sale = parse_price(item["sale"])
 
-        if original is None or sale is None:
+    if not item["name"] or original is None or sale is None:
+        return None
+
+    if sale <= 0 or original <= sale:
+        return None
+
+    # Kontroller at vi har en ekte produktlenke.
+    from urllib.parse import urlparse
+
+    parsed = urlparse(item["url"])
+
+    if store == "Follestad":
+        if parsed.netloc != "www.follestad.no":
             return None
-
-        brand = item["brand"]
-        name = item["name"]
-
-    # Beskytt mot feilmerking og produkter uten reell rabatt.
-    if not name or not original or not sale:
-        return None
-
-    if sale >= original:
-        return None
+        if not parsed.path.startswith("/produkt/"):
+            return None
+    else:
+        if parsed.netloc != "www.fernerjacobsen.no":
+            return None
+        if not parsed.path.startswith("/merker/"):
+            return None
 
     discount_kr = original - sale
     discount_percent = round(discount_kr / original * 100)
 
     return Product(
         store=store,
-        brand=brand,
-        name=name,
+        brand=item["brand"],
+        name=item["name"],
         sale_price=sale,
         original_price=original,
         discount_kr=discount_kr,
