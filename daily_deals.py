@@ -103,6 +103,7 @@ Krav:
 - Ikke gjenta hele produktlisten.
 - Hvis datagrunnlaget er svakt, si at listen
   er sortert etter rabatt.
+- Legg også til bilde av varen som er på tilbud, 3 bilder om mulig
 
 Tilbudsdata:
 {json.dumps(data, ensure_ascii=False)}
