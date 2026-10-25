@@ -11,6 +11,16 @@
   },
   {
     "store": "Ferner Jacobsen",
+    "brand": "Polo Ralph Lauren",
+    "name": "Standard Fit Mesh Graphic Polo Shirt - Solar Sky",
+    "sale_price": 719,
+    "original_price": 2395,
+    "discount_kr": 1676,
+    "discount_percent": 70,
+    "url": "https://www.fernerjacobsen.no/merker/polo-ralph-lauren/herre/pique/kortermet-pique/standard-fit-mesh-graphic-polo-shirt-solar-sky"
+  },
+  {
+    "store": "Ferner Jacobsen",
     "brand": "Ferner Jacobsen",
     "name": "Slim Linen Shirt - Raspberry",
     "sale_price": 510,
@@ -21,6 +31,16 @@
   },
   {
     "store": "Ferner Jacobsen",
+    "brand": "Ferner Jacobsen",
+    "name": "Regular Linen Shirt - Raspberry",
+    "sale_price": 510,
+    "original_price": 1699,
+    "discount_kr": 1189,
+    "discount_percent": 70,
+    "url": "https://www.fernerjacobsen.no/merker/ferner-jacobsen/regular-linen-shirt-raspberry"
+  },
+  {
+    "store": "Ferner Jacobsen",
     "brand": "RL Purple Label",
     "name": "Cotton-cashmere Herringbone Shirt - Champagne",
     "sale_price": 8748,
@@ -28,16 +48,6 @@
     "discount_kr": 8747,
     "discount_percent": 50,
     "url": "https://www.fernerjacobsen.no/merker/rl-purple-label/cotton-cashmere-herringbone-shirt-champagne"
-  },
-  {
-    "store": "Ferner Jacobsen",
-    "brand": "Herno",
-    "name": "Overshirt Down Jacket - Blu Balena Chiaro",
-    "sale_price": 3800,
-    "original_price": 7599,
-    "discount_kr": 3799,
-    "discount_percent": 50,
-    "url": "https://www.fernerjacobsen.no/merker/herno/overshirt-down-jacket-blu-balena-chiaro"
   },
   {
     "store": "Ferner Jacobsen",
@@ -81,6 +91,16 @@
   },
   {
     "store": "Ferner Jacobsen",
+    "brand": "HandPicked",
+    "name": "Ravello Gabardine Pant - Corallo",
+    "sale_price": 1700,
+    "original_price": 3399,
+    "discount_kr": 1699,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/handpicked/ravello-gabardine-pant-corallo"
+  },
+  {
+    "store": "Ferner Jacobsen",
     "brand": "Polo Ralph Lauren",
     "name": "Lateef Slim Tapered Fit Linen Pant - Navy Micro Stripe",
     "sale_price": 1698,
@@ -88,16 +108,6 @@
     "discount_kr": 1697,
     "discount_percent": 50,
     "url": "https://www.fernerjacobsen.no/merker/polo-ralph-lauren/herre/bukse/lateef-slim-tapered-fit-linen-pant-navy-micro-stripe"
-  },
-  {
-    "store": "Ferner Jacobsen",
-    "brand": "UGG",
-    "name": "M Neumel Weather Hybrid - Chestnut / Whitecap",
-    "sale_price": 1500,
-    "original_price": 2999,
-    "discount_kr": 1499,
-    "discount_percent": 50,
-    "url": "https://www.fernerjacobsen.no/merker/ugg/herre/vintersko/m-neumel-weather-hybrid-chestnut-whitecap"
   },
   {
     "store": "Ferner Jacobsen",
@@ -181,6 +191,16 @@
   },
   {
     "store": "Ferner Jacobsen",
+    "brand": "Polo Ralph Lauren",
+    "name": "Gellar Relaxed Twill Cargo Short - Newport Navy",
+    "sale_price": 1023,
+    "original_price": 2045,
+    "discount_kr": 1022,
+    "discount_percent": 50,
+    "url": "https://www.fernerjacobsen.no/merker/polo-ralph-lauren/herre/shorts/gellar-relaxed-twill-cargo-short-newport-navy"
+  },
+  {
+    "store": "Ferner Jacobsen",
     "brand": "Holzweiler",
     "name": "Lio Knitted Polo Shirt - Ecru",
     "sale_price": 950,
@@ -238,16 +258,6 @@
     "discount_kr": 799,
     "discount_percent": 50,
     "url": "https://www.fernerjacobsen.no/merker/gran-sasso/genser/rund-hals-og-v-hals/crew-neck-merino-ligth-grey"
-  },
-  {
-    "store": "Ferner Jacobsen",
-    "brand": "Holzweiler",
-    "name": "Slim-fit Pique Polo Shirt - Teal",
-    "sale_price": 750,
-    "original_price": 1499,
-    "discount_kr": 749,
-    "discount_percent": 50,
-    "url": "https://www.fernerjacobsen.no/merker/holzweiler/herre/t-skjorte/slim-fit-pique-polo-shirt-teal"
   },
   {
     "store": "Ferner Jacobsen",
@@ -400,13 +410,13 @@
     "url": "https://www.fernerjacobsen.no/merker/swims/bag/48-hour-holdall-navy"
   },
   {
-    "store": "Ferner Jacobsen",
-    "brand": "Gran Sasso",
-    "name": "Long Sleeve Pop-over Shirt - White",
-    "sale_price": 1259,
-    "original_price": 1799,
-    "discount_kr": 540,
-    "discount_percent": 30,
-    "url": "https://www.fernerjacobsen.no/merker/gran-sasso/skjorte/long-sleeve-pop-over-shirt-white"
+    "store": "Follestad",
+    "brand": "ETON SOCKS",
+    "name": "Eton Sokker Bamboo 10pk - Marine",
+    "sale_price": 750,
+    "original_price": 990,
+    "discount_kr": 240,
+    "discount_percent": 24,
+    "url": "https://www.follestad.no/produkt/eton-socks-eton-sokker-bamboo-10pk-marine/"
   }
 ]
